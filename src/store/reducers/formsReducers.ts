@@ -14,9 +14,9 @@ const initialState: CurrencyFormState = {
 export const formsReducer = (state: CurrencyFormState = initialState, action: CurrencyFormActions): CurrencyFormState => {
     switch (action.type) {
         case CurrencyActionTypes.SET_FORM_VALUE_FROM:
-            return { ...state, value: { from: action.payload, to: state.value.to } }
+            return { ...state, value: { ...state.value, from: action.payload } }
         case CurrencyActionTypes.SET_FORM_VALUE_TO:
-            return { ...state, value: { from: state.value.from, to: action.payload } }
+            return { ...state, value: { ...state.value, to: action.payload } }
         case CurrencyActionTypes.REVERSE_FORM_CURRENCY:
             return { ...state, currency: { from: state.currency.to, to: state.currency.from } }
         case CurrencyActionTypes.SET_FORM_CURRENCY:
