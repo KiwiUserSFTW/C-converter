@@ -10,3 +10,13 @@ export const setValueFrom = (value: number) => {
         }
     }
 }
+
+export const setValueTo = (value: number) => {
+    return async (dispatch: Dispatch<CurrencyFormActions>) => {
+        try {
+            dispatch({ type: CurrencyActionTypes.SET_FORM_VALUE_TO, payload: value})
+        } catch (err) {
+            //dispatch error
+        }
+    }
+}
