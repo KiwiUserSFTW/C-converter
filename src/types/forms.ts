@@ -13,7 +13,8 @@ export enum CurrencyActionTypes {
     SET_FORM_VALUE_FROM = "SET_FORM_VALUE_FROM",
     SET_FORM_VALUE_TO = "SET_FORM_VALYE_TO",
     REVERSE_FORM_CURRENCY = "REVERSE_FORM_CURRENCY",
-    SET_FORM_CURRENCY = "SET_FORM_CURRENCY"
+    SET_FORM_CURRENCY_TO = "SET_FORM_CURRENCY_TO",
+    SET_FORM_CURRENCY_FROM = "SET_FORM_CURRENCY_FROM"
 }
 
 interface SetFormValueFrom {
@@ -23,16 +24,21 @@ interface SetFormValueFrom {
 
 interface SetFormValueTo {
     type: CurrencyActionTypes.SET_FORM_VALUE_TO;
-    payload: number
+    payload: any
 }
 
 interface ReverseFormCurrency {
     type: CurrencyActionTypes.REVERSE_FORM_CURRENCY;
 }
 
-interface SetFormCurrency {
-    type: CurrencyActionTypes.SET_FORM_CURRENCY;
-    payload:string
+interface SetFormCurrencyFrom {
+    type: CurrencyActionTypes.SET_FORM_CURRENCY_TO;
+    payload: string
 }
 
-export type CurrencyFormActions = SetFormValueFrom | SetFormValueTo | ReverseFormCurrency | SetFormCurrency;
+interface SetFormCurrencyTo {
+    type: CurrencyActionTypes.SET_FORM_CURRENCY_FROM;
+    payload: string
+}
+
+export type CurrencyFormActions = SetFormValueFrom | SetFormValueTo | ReverseFormCurrency | SetFormCurrencyFrom | SetFormCurrencyTo;
