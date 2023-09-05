@@ -1,8 +1,9 @@
-const App = function() {
+import Forms from "./Forms";
+const App: React.FC = () => {
 
   return (
     <>
-        
+        <Forms />
     </>
   )
 }
